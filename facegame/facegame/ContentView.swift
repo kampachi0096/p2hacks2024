@@ -7,18 +7,44 @@
 
 import SwiftUI
 
+// ボトムバー（タブバー）
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+                
+                // ホーム画面
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("ホーム")
+                    }
+                
+                // 画面1
+                Screen1()
+                    .tabItem {
+                        Image(systemName: "camera.fill")
+                        Text("ARカメラ")
+                    }
+                
+                // 画面2
+                Screen2()
+                    .tabItem {
+                        Image(systemName: "pencil.and.list.clipboard")
+                        Text("図鑑")
+                    }
+                
+                
+            }
+            
+            .accentColor(.blue) // タブバー選択時の色
+            
         }
-        .padding()
+        
     }
-}
 
-#Preview {
-    ContentView()
+// プレビュー用
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
