@@ -7,23 +7,22 @@
 
 import SwiftUI
 
-// 画面1
-struct Screen1: View {
+struct Screen1View: View {
     var body: some View {
         VStack {
             Text("ARで写真撮る")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
+            
             Spacer()
         }
         .navigationTitle("AR写真")
     }
 }
 
-// プレビュー用
-struct screen1_Previews: PreviewProvider {
+struct Screen1View_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Screen1View()
     }
 }

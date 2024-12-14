@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-// ボトムバー（タブバー）
 struct ContentView: View {
     var body: some View {
-        TabView {
-                
+        NavigationView {
+            TabView {
                 // ホーム画面
                 HomeView()
                     .tabItem {
@@ -19,28 +18,24 @@ struct ContentView: View {
                         Text("ホーム")
                     }
                 
-                // 画面1
-                Screen1()
+                // 画面1 (ARカメラ)
+                Screen1View()
                     .tabItem {
                         Image(systemName: "camera.fill")
                         Text("ARカメラ")
                     }
                 
-                // 画面2
-                Screen2()
+                // 図鑑（PhotographView）
+                PhotographView()
                     .tabItem {
                         Image(systemName: "pencil.and.list.clipboard")
                         Text("図鑑")
                     }
-                
-                
             }
-            
-            .accentColor(.blue) // タブバー選択時の色
-            
+            .accentColor(.blue)
         }
-        
     }
+}
 
 // プレビュー用
 struct ContentView_Previews: PreviewProvider {

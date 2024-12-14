@@ -1,5 +1,5 @@
 //
-//  Screen2.swift
+//  Untitled.swift
 //  facegame
 //
 //  Created by 小西陽輝 on 2024/12/13.
@@ -7,23 +7,22 @@
 
 import SwiftUI
 
-// 画面2
-struct Screen2: View {
+struct HomeView: View {
     var body: some View {
         VStack {
-            Text("図鑑")
+            Text("ホーム画面")
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding()
+            
             Spacer()
         }
-        .navigationTitle("図鑑")
+        .navigationTitle("ホーム画面")
     }
 }
 
-// プレビュー用
-struct screen2_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
