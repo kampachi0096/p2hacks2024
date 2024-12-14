@@ -8,13 +8,10 @@
 import SwiftUI
 import UIKit
 
-// UIKitのUIButtonを作成
 class GlowingButton: UIButton {
-    
-    // ボタンの色定義
     private let glowColor = UIColor(red: 0.85, green: 0.69, blue: 1.0, alpha: 1)
     private let btnColor = UIColor(red: 0.39, green: 0.24, blue: 0.53, alpha: 1)
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButton()
@@ -56,38 +53,38 @@ class GlowingButton: UIButton {
     }
 }
 
-// UIKitのUIButtonをSwiftUIで使うためのUIViewRepresentable
 struct GlowingButtonRepresentable: UIViewRepresentable {
     let title: String
-    
+    let action: () -> Void
+
     func makeUIView(context: Context) -> UIButton {
         let button = GlowingButton()
         button.setTitle(title, for: .normal)
+        button.addAction(UIAction { _ in action() }, for: .touchUpInside)
         return button
     }
-    
-    func updateUIView(_ uiView: UIButton, context: Context) {
-        // 必要に応じて更新ロジックを追加
-    }
+
+    func updateUIView(_ uiView: UIButton, context: Context) {}
 }
 
-// SwiftUIのビュー
 struct HomeView: View {
+    @EnvironmentObject var viewRouter: ViewRouter
+
     var body: some View {
         ZStack {
-            // 背景画像を中央に配置
             Image("home")
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
                 .offset(x: -25)
-            
-            // ボタンと他の要素を重ねる
+
             VStack {
                 Spacer()
-                GlowingButtonRepresentable(title: "PLAY!")
-                    .frame(width: 200, height: 60)
-                    .padding(.bottom, 170) // ボタン位置を画面下部に寄せる
+                GlowingButtonRepresentable(title: "PLAY!") {
+                    viewRouter.currentPage = .game // ボタン押下時にGame画面へ遷移
+                }
+                .frame(width: 200, height: 60)
+                .padding(.bottom, 170)
             }
         }
     }
@@ -96,4 +93,5 @@ struct HomeView: View {
 // プレビュー
 #Preview {
     HomeView()
+        .environmentObject(ViewRouter()) 
 }

@@ -11,33 +11,42 @@ import AVFoundation
 @main
 struct facegameApp: App {
     @StateObject private var viewRouter = ViewRouter()
-    
+    @Environment(\.scenePhase) private var scenePhase
+
     init() {
         configureAudioSession()
-        AudioPlayer.shared.playSound(fileName: "n003", fileExtension: "mp3") // 音声再生を開始
+        AudioPlayer.shared.playSound(fileName: "n003", fileExtension: "mp3") // 起動時の音声再生
     }
     
     var body: some Scene {
         WindowGroup {
-            if viewRouter.currentPage == .splash {
+            switch viewRouter.currentPage {
+            case .splash:
                 SplashView()
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                             viewRouter.currentPage = .home
                         }
                     }
-            } else {
+            case .home:
                 HomeView()
+                    .environmentObject(viewRouter)
+            case .game:
+                GameView()
+                    .environmentObject(viewRouter)
             }
         }
         .onChange(of: scenePhase) { newPhase in
-            if newPhase == .background || newPhase == .inactive {
-                AudioPlayer.shared.stopSound() // アプリがバックグラウンドまたは終了時に音楽を停止
+            switch newPhase {
+            case .background, .inactive:
+                AudioPlayer.shared.stopSound()
+            case .active:
+                AudioPlayer.shared.playSound(fileName: "n003", fileExtension: "mp3")
+            default:
+                break
             }
         }
     }
-    
-    @Environment(\.scenePhase) private var scenePhase
 
     func configureAudioSession() {
         do {
@@ -50,14 +59,13 @@ struct facegameApp: App {
     }
 }
 
-
 // ページ遷移管理クラス
 class ViewRouter: ObservableObject {
     @Published var currentPage: Page = .splash
 }
 
-// ページを表す列挙型
 enum Page {
     case splash
     case home
+    case game
 }
