@@ -1,4 +1,6 @@
 .DS_Store
 facegame/facegame.xcodeproj/project.xcworkspace/xcuserdata/
 facegame/facegame.xcodeproj/xcuserdata/
+*.xcuserstate
+
 
