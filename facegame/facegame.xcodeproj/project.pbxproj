@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F7C6694F2D0E2A1B00D9A1C5 /* n003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7C6694E2D0E2A1B00D9A1C5 /* n003.mp3 */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		F7C668B92D0BDDAB00D9A1C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		F7C668A82D0BDDA900D9A1C5 /* facegame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = facegame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C668B82D0BDDAB00D9A1C5 /* facegameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = facegameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C668C22D0BDDAB00D9A1C5 /* facegameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = facegameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7C6694E2D0E2A1B00D9A1C5 /* n003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = n003.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +84,7 @@
 				F7C668BB2D0BDDAB00D9A1C5 /* facegameTests */,
 				F7C668C52D0BDDAB00D9A1C5 /* facegameUITests */,
 				F7C668A92D0BDDA900D9A1C5 /* Products */,
+				F7C6694E2D0E2A1B00D9A1C5 /* n003.mp3 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C6694F2D0E2A1B00D9A1C5 /* n003.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +403,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"facegame/Preview Content\"";
-				DEVELOPMENT_TEAM = LWW7SQLS8W;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -409,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fpb.facegame;
+				PRODUCT_BUNDLE_IDENTIFIER = aaaa.facegame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -425,7 +432,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"facegame/Preview Content\"";
-				DEVELOPMENT_TEAM = LWW7SQLS8W;
+				DEVELOPMENT_TEAM = T65959K934;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -438,7 +445,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fpb.facegame;
+				PRODUCT_BUNDLE_IDENTIFIER = aaaa.facegame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
